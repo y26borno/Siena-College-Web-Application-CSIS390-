@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<title>Append</title>
+    
+    
+    <style>
+    
+        div{
+            
+            border: 1px solid gray;
+            border-radius: 5px;
+            padding: 5px;
+            margin: 5px;
+            
+        }
+        
+        label{
+            
+            
+            display: block;
+        }
+    
+        input {
+            
+            
+            height:1.6rem;
+            font-size:1.1rem;
+        }
+        input[type~="submit"]{
+            height: 2.5rem;
+            background-color: lightgreen;
+            padding: 5px;
+            border: 1px solid gray;
+            border-radius: 5px;
+            box-shadow: 1px 2px 8px gray;
+        }
+    
+    </style>
+
+<body>
+
+<form id="pony_form" action="http://breimer.sienacs.com/courses/csis-390-s17/labs/lab2/insert_pony.php" method="get">	
+</form>
+
+<script>
+    function checkForm(event){
+        alert("Submitting form");
+    }
+    
+	var newID = "pony_name";
+	
+	var newLabel = document.createElement('label');
+	newLabel.setAttribute("for", newID);
+	newLabel.innerHTML = "<b>Name:</b> <br>";
+	
+	var newInput = document.createElement('input');
+	newInput.setAttribute("type", "text");
+	newInput.setAttribute("id", newID);
+	newInput.setAttribute("name", newID);
+	
+	var newDiv = document.createElement('div');
+	newDiv.appendChild(newLabel);
+	newDiv.appendChild(newInput);
+    
+    
+    
+    var newDiv1 = document.createElement('div');
+    var newLabel1 = document.createElement('label');
+    newLabel1.innerHTML = "<b>Birthday:</b> <br>"
+    
+    var newInput1 = document.createElement('input');
+    newInput1.setAttribute("type", "date");
+	newInput1.setAttribute("id", "pony_birthday");
+	newInput1.setAttribute("name","pony_birthday");
+    
+    newDiv1.appendChild(newLabel1);
+    newDiv1.appendChild(newInput1);
+    
+
+    
+    var newInput2 = document.createElement('input');
+    newInput2.setAttribute("type", "submit");
+    newInput2.setAttribute("value", "Insert");
+	newInput2.setAttribute("id", "action_button");
+	newInput2.setAttribute("name","action_button");
+    
+	
+	var ponyForm = document.querySelector("#pony_form");
+	ponyForm.appendChild(newDiv);
+    ponyForm.appendChild(newDiv1);
+    ponyForm.appendChild(newInput2);
+    
+    ponyForm.addEventListener("submit", checkForm);
+    
+    var submitButton = document.querySelector("#action_button");
+    
+    submitButton.addEventListener("mouseover", function() {
+        this.style.color = "white";
+        this.style.backgroundColor = "darkgreen";
+    });
+    
+    submitButton.addEventListener("mouseout", function(){
+        this.style.color = "black";
+        this.style.backgroundColor = "lightgreen";
+    });
+</script>
+		
+</body>
+</html>
