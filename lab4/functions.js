@@ -42,11 +42,15 @@ function makeInput(type,id,value,label) {
 		newDiv = document.createElement("div");
 		newDiv.appendChild(newLabel);
 		newDiv.appendChild(newInput);
+		return newDiv;
+	}else{
 		
+		
+		return newInput;
 	}
 	
 	
-	return newDiv;
+	//return newDiv;
 }
 
 
