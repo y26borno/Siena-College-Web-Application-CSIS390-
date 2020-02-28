@@ -62,9 +62,9 @@ function makeSelect(id,value,label) {
 		newSelect.setAttribute("id", id);
 	}
 	
-	//if (value!== undefined && value != "") {
-	//	newSelect.setAttribute("name", value);
-	//}
+	if (value!== undefined && value != "") {
+		newSelect.setAttribute("name", value);
+	}
 	
 	
 	for (var i = 0; i < value.length;i++ ){
@@ -96,6 +96,25 @@ function makeSelect(id,value,label) {
 	
 	return newDiv;
 }
+
+
+function makeArray(num1,num2){
+	
+	var myArray =[];
+	
+	
+	for(var i=num1; i <= num2 ; i++){
+		
+		var myString = i.toString();
+		
+		myArray.push(myString);
+		
+	}
+	  
+	
+	return myArray;
+}
+
 
 
 
