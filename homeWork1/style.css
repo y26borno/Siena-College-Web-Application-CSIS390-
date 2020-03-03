@@ -1,18 +1,4 @@
-<!doctype html>
-
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-
-  <title>Home</title>
-  <meta name="website for tourism" content="website tourism">
-  <meta name="Yousuf Borna" content="Culture">
-    
-<link rel="stylesheet" type="text/css" href="style.css">    
-<!--    
-<style>
-    
-    body{
+body{
         
         font-family: Arial, Helvetica, sans-serif;
         background-color: #d6460d;
@@ -110,51 +96,3 @@
         border-radius: 15px;
         box-shadow: 10px 10px 5px #82e5f5;
     }
-    
-    
-    
-</style>
-
--->
-</head>
-
-<body>
-    
-    <header>
-        <img src="flag.jpg" style="width: 30px; height: 30px;"/>
-        <h3 style="color: aliceblue">Tourism BD</h3>    
-        <nav>
-<a href="home.html">Home</a> 
-<a href="culture.html">Culture/Food</a> 
-<a href="attraction.html">Attractions</a> 
-
-</nav>
-    
-    </header>
-    
-    
-    <div>
-        
-     <div id="about">
-        <img src="map1.jpg" >
-         <p style=" margin-top: 390px; text-align: center ">Map of Bangladesh </p>
-        
-        
-      </div>
-        
-    <div id="information">
-        <h2 style=" text-align: center;line-height: 3px;">About: </h2>
-        <p>Bangladesh, to the east of India on the Bay of Bengal, is a South Asian country marked by lush greenery and many waterways. Its Padma (Ganges), Meghna and Jamuna rivers create fertile plains, and travel by boat is common.</p>
-        <p>Prime minister: Sheikh Hasina</p>
-        <p>Capital: Dhaka</p>
-        <p>Official language: Bengali</p>
-        <p>Flight time(From US): 22 h 36 min flight</p>
-        
-      </div>        
-    
-    
-    
-    </div>
-  
-</body>
-</html>
