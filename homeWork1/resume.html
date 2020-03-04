@@ -11,6 +11,12 @@
   
     
     <style>
+        
+        body{
+            
+           font-family: Arial, Helvetica, sans-serif; 
+           background-color: #e9f1f5;        
+        }
     
         header{
             padding-top: 3px;
@@ -21,6 +27,15 @@
             margin-left: 330px;
             background-color: aliceblue;
             margin-bottom: 6px;
+            border-radius: 5px;
+            
+        }
+        
+        header:hover{
+            
+            border-bottom: 6px solid #00f6fa;
+            border-radius: 3px;
+            
         }
         h3{
             
@@ -40,15 +55,33 @@
             height:97px;
             margin-left: 330px;
             margin-bottom: 6px;
+            border-radius: 5px;
+        }
+        
+        #education:hover{
+            
+            border: 3px solid #00f6fa;
+            border-radius: 3px;
+            box-shadow: 10px 10px 5px #82e5f5;
+            
         }
         
         #job{
             
             border: 2px solid black;
             width: 596px;
-            height:97px;
+            height:127px;
             margin-left: 330px;
             margin-bottom: 6px;
+            border-radius: 5px;
+        }
+        
+        
+        #job:hover{
+            
+            border: 3px solid #00f6fa;
+            border-radius: 3px;
+            box-shadow: 10px 10px 5px #82e5f5;
         }
         
         #skill{
@@ -58,7 +91,16 @@
             height:97px;
             margin-left: 330px;
             margin-bottom: 6px;
+            border-radius: 5px;
             
+        }
+        
+        
+        #skill:hover{
+            
+            border: 3px solid #00f6fa;
+            border-radius: 3px;
+            box-shadow: 10px 10px 5px #82e5f5;
         }
         
         #courses{
@@ -68,7 +110,16 @@
             height:147px;
             margin-left: 330px;
             margin-bottom: 6px;
+            border-radius: 5px;
             
+        }
+        
+        #courses:hover{
+            
+            
+            border: 3px solid #00f6fa;
+            border-radius: 3px;
+            box-shadow: 10px 10px 5px #82e5f5;
         }
         
         
@@ -85,8 +136,16 @@
             height:147px;
             margin-left: 330px;
             margin-bottom: 6px;
+            border-radius: 5px;
             
             
+        }
+        
+        #activities:hover{
+            
+            border: 3px solid #00f6fa;
+            border-radius: 3px;
+            box-shadow: 10px 10px 5px #82e5f5;
         }
         
         #activitylist{
@@ -94,35 +153,45 @@
             
         }
         
+        #courselist ul li{
+            
+            list-style-type: square;
+        }
         
+        #activitylist ul li{
+            
+            list-style-type: square;
+            
+        }
     
     </style>
 
 </head>
 
 <body>
+    
   <header>
         <h3>Yousuf Abdullah Borna</h3>
-        <p>Email:yb2bor&#64;siena.edu Phone: 518-774-1555</p>
-        <p>Address: 489 quil street Albany, NY 12206</p>
+      <p><b>Email</b>:yb2bor&#64;siena.edu Phone: 518-774-1555</p>
+      <p><b>Address</b>: 489 quil street Albany, NY 12206</p>
   </header>
     <div>
         <div id="education">
-        <h3>EDUCATION</h3>
+        <h3>Education</h3>
             <p class="education">Siena College, Loudonville, NY</p>
             <p class="education">Bachelor of Science, Computer Science May 2021</p>
         </div>
         
         <div id="job">
-        <h3>Job Experience </h3>
-            <p class="job">Siena College, Loudonville, NY</p>
-            <p class="job">Bachelor of Science, Computer Science May 2021</p>
+        <h3 style=" margin-bottom:44px;">Job Experience </h3>
+            <p class="job" style="margin-right: 64px; margin-bottom:14px;"><b><i>Tutor</i></b>, Student Academic Success &amp; Engagement Office, Siena College</p>
+            
         </div>
         
         <div id="skill">
         <h3>Techincal Skill </h3>
-            <p class="job">Proficiency in: Java, JavaScript, Python, HTML5, CSS3</p>
-            <p class="job">Familiar with: Swing(Java GUI Framework), Spyder (Python framework)</p>
+            <p class="job" style="margin-right: 114px;"><b>Proficiency in:</b> Java, JavaScript, Python, HTML5, CSS3</p>
+            <p class="job"><b>Familiar with:</b> Swing(Java GUI Framework), Spyder (Python framework)</p>
         </div>
         
         <div id="courses">
@@ -139,7 +208,7 @@
         </div>
         
         <div id="activities">
-        <h3>CAMPUS &amp; COMMUNITY ACTIVITIES </h3>
+        <h3>Campus &amp; Community Activities </h3>
             <div id="activitylist">
             <ul>
             <li>International Students Club, Siena College, Fall 2016 - Present</li>
