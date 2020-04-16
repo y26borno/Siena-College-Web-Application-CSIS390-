@@ -1,0 +1,139 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Password Strength Tester</title>
+  <meta name="description" content="Password Strength Tester">
+  <meta name="Yousuf Borna" content="pTester">
+
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    
+    
+    
+    
+    
+  <script>
+       
+      
+      
+      var divBody = document.createElement("div");
+      divBody.setAttribute("id","body");
+      
+      var image  = document.createElement("img");
+      image.setAttribute("src","img/logo.png");
+      
+      
+      var formBody = document.createElement("div");
+          formBody.setAttribute("id","formBody");
+      
+      
+      var h2 = document.createElement("h2");
+      h2.innerHTML = "Sign up Page";
+      
+      var form = document.createElement("form");
+      form.setAttribute("method","GET");
+      
+      var label1 = document.createElement("label");
+      label1.setAttribute("for","fname");
+      label1.appendChild(document.createTextNode("Username:"));
+      var break1 = document.createElement("br");
+      var input1 = document.createElement("input");
+      input1.setAttribute("type", "text");
+      input1.setAttribute("id", "fname");
+      input1.setAttribute("name", "fname");
+      var break2 = document.createElement("br");
+      
+      var label2 = document.createElement("label");
+      label2.setAttribute("for","password");
+      label2.appendChild(document.createTextNode("Password:"));
+      var break3 = document.createElement("br");
+      var input2 = document.createElement("input");
+      input2.setAttribute("type", "text");
+      input2.setAttribute("id", "password");
+      input2.setAttribute("name", "password");
+      var break4 = document.createElement("br");
+      
+      
+      var label3 = document.createElement("label");
+      label3.setAttribute("for","repassword");
+      label3.appendChild(document.createTextNode("re-password:"));
+      var break5 = document.createElement("br");
+      var input3 = document.createElement("input");
+      input3.setAttribute("type", "text");
+      input3.setAttribute("id", "repassword");
+      input3.setAttribute("name", "repassword");
+      var break6 = document.createElement("br");
+      
+      var break7 = document.createElement("br");
+      var break8 = document.createElement("br");
+      
+      
+      var input4 = document.createElement("input");
+      input4.setAttribute("type", "submit");
+      input4.setAttribute("id", "button");
+      input4.setAttribute("value", "Submit");
+      
+      
+      var messageDiv = document.createElement("div");
+      messageDiv.setAttribute("id","message");
+      
+      var display = document.createElement("p");
+      display.setAttribute("id","display");
+      messageDiv.appendChild(display);
+      
+      
+      //form
+      
+      form.appendChild(label1);
+      form.appendChild(break1);
+      form.appendChild(input1);
+      form.appendChild(break2);
+      //form.appendChild(input4);
+      
+      
+      form.appendChild(label2);
+      form.appendChild(break3);
+      form.appendChild(input2);
+      form.appendChild(break4);
+      //form.appendChild(input4);
+      
+      form.appendChild(label3);
+      form.appendChild(break5);
+      form.appendChild(input3);
+      form.appendChild(break6);
+      form.appendChild(input4);
+      
+      
+      
+      
+      
+      
+      var mainBody = document.querySelector("body");
+      
+      //mainBody.appendChild(image);
+      
+      
+      //div - body
+      formBody.appendChild(h2);
+      formBody.appendChild(form);
+      formBody.appendChild(messageDiv);
+      
+      divBody.appendChild(image);
+      divBody.appendChild(formBody);
+      
+      //formBody
+      
+      
+      
+      mainBody.appendChild(divBody);
+    
+    
+    </script>
+</body>
+</html>
