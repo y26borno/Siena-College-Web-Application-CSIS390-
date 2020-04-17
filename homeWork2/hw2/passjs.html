@@ -144,7 +144,7 @@
       
       mainBody.appendChild(divBody);
       
-      
+ /*     
  var totalChar = 0;
  var password = "";
  var totalupperCase=0;      
@@ -155,11 +155,11 @@
  var DigitCase = "";
  var totalSymbolCase=0;      
  var SymbolCase = "";
- //var generatePassword="";      
+ var generatePassword="";      
+  */    
       
-      
-  var repassword = "";    
-  var paragraph = document.querySelector("p");    
+  //var repassword = "";    
+  //var paragraph = document.querySelector("p");    
   
       input4.addEventListener("click",test);
       input5.addEventListener("click",generate);
@@ -173,6 +173,8 @@
       
       
       function generate(event){
+          
+          var paragraph = document.querySelector("p");
          var generatePassword=""; 
           var passwordlength = 8+getRandomInt(4);
           // 65 -90
@@ -251,7 +253,18 @@
       
       
      function test(event){
-         
+var totalChar = 0;
+ var password = "";
+ var totalupperCase=0;      
+ var upperCase = "";
+ var totallowerCase=0;      
+ var lowerCase = "";
+ var totalDigitCase=0;      
+ var DigitCase = "";
+ var totalSymbolCase=0;      
+ var SymbolCase = "";  
+ var paragraph = document.querySelector("p");      
+var totalPoints=0;
          
          password = document.getElementById("password").value;
          repassword = document.getElementById("repassword").value;
@@ -395,6 +408,7 @@
           //messageSection.style.backgroundColor = "red";
           //messageSection.style.width = "275px";
           //messageSection.style.height = "50px";
+          paragraph.style.color = "black";
           paragraph.innerHTML ="MisMatched, please retype repassword correctly"; 
       }
          
