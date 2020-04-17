@@ -1,0 +1,27 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Password Strength Tester</title>
+  <meta name="description" content="Password Strength Tester">
+  <meta name="Yousuf Borna" content="pTester">
+
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    
+    
+    
+    
+    
+  <script>
+       var divBody=document.createElement("div");divBody.setAttribute("id","body");var image=document.createElement("img");image.setAttribute("src","img/logo.png");var formBody=document.createElement("div");formBody.setAttribute("id","formBody");var h2=document.createElement("h2");h2.innerHTML="Sign up Page";var form=document.createElement("form");form.setAttribute("method","GET");var label1=document.createElement("label");label1.setAttribute("for","fname"),label1.appendChild(document.createTextNode("Username:"));var break1=document.createElement("br"),input1=document.createElement("input");input1.setAttribute("type","text"),input1.setAttribute("id","fname"),input1.setAttribute("name","fname");var break2=document.createElement("br"),label2=document.createElement("label");label2.setAttribute("for","password"),label2.appendChild(document.createTextNode("Password:"));var break3=document.createElement("br"),input2=document.createElement("input");input2.setAttribute("type","text"),input2.setAttribute("id","password"),input2.setAttribute("name","password");var break4=document.createElement("br"),label3=document.createElement("label");label3.setAttribute("for","repassword"),label3.appendChild(document.createTextNode("re-password:"));var break5=document.createElement("br"),input3=document.createElement("input");input3.setAttribute("type","text"),input3.setAttribute("id","repassword"),input3.setAttribute("name","repassword");var break6=document.createElement("br"),break7=document.createElement("br"),break8=document.createElement("br"),input4=document.createElement("input");input4.setAttribute("type","submit"),input4.setAttribute("id","button"),input4.setAttribute("value","Submit");var break9=document.createElement("br"),break10=document.createElement("br"),input5=document.createElement("input");input5.setAttribute("type","submit"),input5.setAttribute("id","button1"),input5.setAttribute("value","Generate Password");var messageDiv=document.createElement("div");messageDiv.setAttribute("id","message");var display=document.createElement("p");display.setAttribute("id","display"),messageDiv.appendChild(display),form.appendChild(label1),form.appendChild(break1),form.appendChild(input1),form.appendChild(break2),form.appendChild(label2),form.appendChild(break3),form.appendChild(input2),form.appendChild(break4),form.appendChild(label3),form.appendChild(break5),form.appendChild(input3),form.appendChild(break6),form.appendChild(input4),form.appendChild(break7),form.appendChild(input5);var mainBody=document.querySelector("body");formBody.appendChild(h2),formBody.appendChild(form),formBody.appendChild(messageDiv),divBody.appendChild(image),divBody.appendChild(formBody),mainBody.appendChild(divBody);var totalChar=0,password="",totalupperCase=0,upperCase="",totallowerCase=0,lowerCase="",totalDigitCase=0,DigitCase="",totalSymbolCase=0,SymbolCase="",repassword="",paragraph=document.querySelector("p");function getRandomInt(e){return Math.floor(Math.random()*Math.floor(e))}function generate(e){for(var t="",a=8+getRandomInt(4),r=65,o=97,n=33,d=48,p=0,s=0,l=0,i=0,m=0;m<a/2;m++){p++,r=65+getRandomInt(25),t+=String.fromCharCode(r)}for(m=a/2;m<a/2+2;m++){s++,o=97+getRandomInt(25),t+=String.fromCharCode(o)}for(m=a/2+1;m<a/2+2;m++){l++,d=48+getRandomInt(9),t+=String.fromCharCode(d)}for(m=a/2+2;m<a;m++){i++,n=33+getRandomInt(14),t+=String.fromCharCode(n)}var u,c=t.length;u=4*c+2*(c-p)+2*(c-s)+4*l+6*i,paragraph.innerHTML="Total points "+u+".  New Generate Password: "+t,e.preventDefault()}function test(e){password=document.getElementById("password").value,repassword=document.getElementById("repassword").value,totalChar=password.length;for(var t=0;t<totalChar;t++)password.charAt(t)==password.charAt(t).toUpperCase()&&(upperCase+=password.charAt(t));totalupperCase=upperCase.length;for(var a=0;a<totalChar;a++)password.charAt(a)==password.charAt(a).toLowerCase()&&(lowerCase+=password.charAt(a));totallowerCase=lowerCase.length;for(var r=0;r<totalChar;r++)isNaN(password.charAt(r))||(DigitCase+=password.charAt(r));totalDigitCase=DigitCase.length;for(var o=0;o<totalChar;o++)password.charAt(o)<="/"&&password.charAt(o)>="!"&&(SymbolCase+=password.charAt(o)),password.charAt(o)<="@"&&password.charAt(o)>=":"&&(SymbolCase+=password.charAt(o)),password.charAt(o)<="`"&&password.charAt(o)>="]"&&(SymbolCase+=password.charAt(o));totalSymbolCase=SymbolCase.length;for(var n=4*totalChar+2*(totalChar-totalupperCase)+2*(totalChar-totallowerCase)+4*totalDigitCase+6*totalSymbolCase,d=0,p=0;p<totalChar;p++)password.charAt(p)==repassword.charAt(p)&&d++;d==totalChar&&password.length==repassword.length?n>40?(paragraph.style.color="green",paragraph.innerHTML="Matched, Strong password and totalpoints: "+n):n>=21&&n<=40?(paragraph.style.color="yellow",paragraph.innerHTML="Matched, but average password and totalpoints: "+n):n<=20&&(paragraph.style.color="red",paragraph.innerHTML="Matched, but too weak password and totalpoints: "+n):paragraph.innerHTML="MisMatched, please retype repassword correctly",e.preventDefault()}input4.addEventListener("click",test),input5.addEventListener("click",generate);
+
+    
+    </script>
+</body>
+</html>
