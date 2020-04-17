@@ -80,6 +80,15 @@
       input4.setAttribute("value", "Submit");
       
       
+      var break9 = document.createElement("br");
+      var break10 = document.createElement("br");
+      
+      var input5 = document.createElement("input");
+      input5.setAttribute("type", "submit");
+      input5.setAttribute("id", "button1");
+      input5.setAttribute("value", "Generate Password");
+      
+      
       var messageDiv = document.createElement("div");
       messageDiv.setAttribute("id","message");
       
@@ -108,6 +117,8 @@
       form.appendChild(input3);
       form.appendChild(break6);
       form.appendChild(input4);
+      form.appendChild(break7);
+      form.appendChild(input5);
       
       
       
@@ -132,6 +143,270 @@
       
       
       mainBody.appendChild(divBody);
+      
+      
+ var totalChar = 0;
+ var password = "";
+ var totalupperCase=0;      
+ var upperCase = "";
+ var totallowerCase=0;      
+ var lowerCase = "";
+ var totalDigitCase=0;      
+ var DigitCase = "";
+ var totalSymbolCase=0;      
+ var SymbolCase = "";
+ //var generatePassword="";      
+      
+      
+  var repassword = "";    
+  var paragraph = document.querySelector("p");    
+  
+      input4.addEventListener("click",test);
+      input5.addEventListener("click",generate);
+     
+     
+      function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+         }
+      
+      
+      
+      
+      function generate(event){
+         var generatePassword=""; 
+          var passwordlength = 8+getRandomInt(4);
+          // 65 -90
+          var uppercaseLetter = 65;
+          // 97 -122
+          var upperlowerLetter = 97;
+          
+          // 33 - 47
+          var symbolChar = 33;
+          
+          // 48 -  57
+          
+          var numChar = 48;
+          
+          
+          var totalUpper = 0;
+          var totalLower = 0;
+          var totalnumber = 0;
+          var totalsymbol =0;
+          
+          for (var i=0; i < passwordlength/2; i++ ){
+                
+                totalUpper++;
+                uppercaseLetter = 65 + getRandomInt(25); 
+               var str = String.fromCharCode(uppercaseLetter);
+               generatePassword+= str; 
+              
+          }
+          
+          
+          
+          for (var i=passwordlength/2; i < passwordlength/2 + 2; i++ ){
+              
+                 totalLower++;
+                upperlowerLetter = 97+ getRandomInt(25);
+              var str = String.fromCharCode(upperlowerLetter);
+              generatePassword+= str; 
+              
+          }
+          
+          
+          for (var i=(passwordlength/2)+1; i < (passwordlength/2)+2; i++ ){
+              
+                 totalnumber++;
+                numChar = 48+ getRandomInt(9);
+              var str = String.fromCharCode(numChar);
+              generatePassword+= str; 
+              
+          }
+          
+          for (var i=(passwordlength/2)+2; i < passwordlength ; i++ ){
+              
+                 totalsymbol++;
+                symbolChar = 33+ getRandomInt(14);
+              var str = String.fromCharCode(symbolChar);
+              generatePassword+= str; 
+              
+          }
+          
+          
+          
+           var totalPointsnew=0;
+          
+           var totalChar1 = generatePassword.length;
+          
+          
+        totalPointsnew = (4 * totalChar1) + ((totalChar1 - totalUpper) * 2) + ((totalChar1 - totalLower) * 2) + ( totalnumber*4) + ( totalsymbol*6);
+          
+          
+          paragraph.innerHTML="Total points "+totalPointsnew+".  New Generate Password: "+generatePassword  ;
+          
+          event.preventDefault();
+          
+      }
+      
+      
+      
+     function test(event){
+         
+         
+         password = document.getElementById("password").value;
+         repassword = document.getElementById("repassword").value;
+         
+         totalChar= password.length;
+         
+         
+         for(var i = 0; i < totalChar; i++){
+        
+        if (password.charAt(i) == password.charAt(i).toUpperCase() ){
+            
+              upperCase+=password.charAt(i);
+            }
+          
+    }
+         
+         //TOTAL UPPERCASE
+      totalupperCase= upperCase.length;
+      //paragraph.innerHTML +=totalupperCase+" "+upperCase;
+       
+         
+         
+         for(var j = 0; j < totalChar; j++){
+        
+        if (password.charAt(j) == password.charAt(j).toLowerCase() ){
+            
+              lowerCase+=password.charAt(j);
+            }
+          
+    }
+         
+         //TOTAL LOWERCASE
+      totallowerCase= lowerCase.length;
+      //paragraph.innerHTML +=totallowerCase+" "+lowerCase;  
+      //paragraph.innerHTML = "lower: "+totallowerCase+" upper:"+totalupperCase;
+         
+         
+        for(var z = 0; z < totalChar; z++){
+        
+        if ( !(isNaN(password.charAt(z))) ){
+            
+              DigitCase+=password.charAt(z);
+            }
+          
+    } 
+         
+         
+         totalDigitCase = DigitCase.length;
+      //paragraph.innerHTML +=totalDigitCase+" "+DigitCase;
+        
+         
+         
+         for(var k = 0; k < totalChar;k++){
+      
+      if( password.charAt(k) <= '/' && password.charAt(k) >= '!'){
+                SymbolCase+=password.charAt(k);
+               
+            }
+      
+      if( password.charAt(k) <= '@' && password.charAt(k) >= ':'){
+                SymbolCase+=password.charAt(k);
+               
+            }
+      
+      if( password.charAt(k) <= '`' && password.charAt(k) >= ']'){
+                SymbolCase+=password.charAt(k);
+               
+            }
+      
+            
+      
+            
+      }
+         
+         
+         
+         totalSymbolCase = SymbolCase.length;
+         
+         var totalPoints = (4 * totalChar) + ((totalChar - totalupperCase) * 2) + ((totalChar - totallowerCase) * 2) + ( totalDigitCase *4) + ( totalSymbolCase*6);
+         
+         
+         
+         var count = 0;
+       
+         for(var f = 0; f < totalChar; f++){
+        
+        if (password.charAt(f) == repassword.charAt(f)){
+            
+               count++;
+            }
+          
+    }
+         
+         
+         
+         
+         if( (count == totalChar) && (password.length == repassword.length)){
+           
+             
+            
+            if (totalPoints > 40){
+          
+                  //var messageSection = document.getElementById("message");
+                  //messageSection.style.backgroundColor = "green";
+                  //messageSection.style.width = "275px";
+                  //messageSection.style.height = "50px";
+          
+                paragraph.style.color = "green";
+                paragraph.innerHTML ="Matched, Strong password and totalpoints: "+totalPoints;
+          }
+      
+      else if (totalPoints >= 21 &&  totalPoints <= 40){
+          
+          //var messageSection = document.getElementById("message");
+          //messageSection.style.backgroundColor = "yellow";
+          //messageSection.style.width = "275px";
+          //messageSection.style.height = "50px";
+          
+          paragraph.style.color = "yellow";
+          paragraph.innerHTML ="Matched, but average password and totalpoints: "+ totalPoints;
+          }
+      
+      else if (totalPoints <= 20){
+          
+          //var messageSection = document.getElementById("message");
+          //messageSection.style.backgroundColor = "red";
+          //messageSection.style.width = "275px";
+          //messageSection.style.height = "50px";
+          paragraph.style.color = "red";
+          paragraph.innerHTML ="Matched, but too weak password and totalpoints: "+ totalPoints;
+          }
+            //paragraph.innerHTML ="Matched";
+           
+         
+         }
+      
+      
+      else{
+          
+          //var messageSection = document.getElementById("message");
+          //messageSection.style.backgroundColor = "red";
+          //messageSection.style.width = "275px";
+          //messageSection.style.height = "50px";
+          paragraph.innerHTML ="MisMatched, please retype repassword correctly"; 
+      }
+         
+         
+         
+         
+         
+         //var para = document.getElementById("display");
+         //para.innerHTML= "clicked: "+totalSymbolCase;
+         
+       event.preventDefault();  
+     } 
     
     
     </script>
